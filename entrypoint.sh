@@ -12,5 +12,6 @@ aws eks --name=${EKS_CLUSTER} update-kubeconfig
 echo "running kubectl $1"
 output="$(kubectl $1 2>&1)"
 exit_code=$?
+echo $output
 echo "::set-output name=output::$output"
 if [[ $exit_code -eq 0 ]]; then exit 0; else exit 1; fi
