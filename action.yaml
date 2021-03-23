@@ -1,4 +1,4 @@
-name: 'kubectl EKS'
+name: 'EKS kubectl'
 description: 'Run kubectl commands on an EKS'
 inputs:
   command:
