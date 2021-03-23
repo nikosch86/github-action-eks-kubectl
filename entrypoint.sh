@@ -10,6 +10,7 @@ echo "creating kubeconfig using AWS credentials"
 aws eks --name=${EKS_CLUSTER} update-kubeconfig
 
 echo "running kubectl $1"
+set -o pipefail
 kubectl $1 2>&1 | tee /tmp/kubectl.out
 exit_code=$?
 output="$(cat /tmp/kubectl.out)"
