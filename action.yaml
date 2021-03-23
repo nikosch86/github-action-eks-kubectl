@@ -1,0 +1,17 @@
+name: 'kubectl EKS'
+description: 'Run kubectl commands on an EKS'
+inputs:
+  command:
+    description: 'kubectl command to run'
+    required: true
+outputs:
+  output:
+    description: 'Output of the command'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.command }}
+branding:
+  icon: 'cloud'
+  color: 'blue'
