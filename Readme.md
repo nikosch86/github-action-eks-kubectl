@@ -27,7 +27,7 @@ jobs:
       - name: Run kubectl
         uses: nikosch86/github-action-eks-kubectl@main
         with:
-          command: "apply deployment.yaml"
+          command: "apply -f deployment.yaml"
         env:
           EKS_CLUSTER: optional-cluster-name
 ```
